@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+.delete-box {
+	max-width: 700px;
+	margin: 50px auto;
+	padding: 30px;
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.delete-box h2 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.delete-box p {
+	font-size: 0.95em;
+	color: #444;
+	line-height: 1.6;
+}
+
+.delete-box .agree-box {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.delete-box button {
+	margin-top: 20px;
+}
+
+.agree-box .btn {
+	display: inline-block;
+	padding: 10px 20px;
+	margin: 20px;
+	border-radius: 8px;
+	font-weight: bold;
+	text-decoration: none;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+/* 빨간 버튼 (확인용) */
+.agree-box .btn-danger {
+	background: #e74c3c;
+	color: #fff;
+}
+
+.agree-box .btn-danger:hover {
+	background: #c0392b;
+}
+
+/* 회색 버튼 (취소용) */
+.agree-box .btn-secondary {
+	background: #ccc;
+	color: #000;
+}
+
+.agree-box .btn-secondary:hover {
+	background: #aaa;
+}
+
+/* 모달 숨기기 */
+.modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.6);
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+.modal.active {
+	display: flex;
+}
+
+.modal-content {
+	background: #fff;
+	border-radius: 8px;
+	width: 400px;
+	padding: 20px;
+	text-align: center;
+}
+
+.modal-header {
+	font-size: 1.2em;
+	margin-bottom: 15px;
+}
+
+.modal-body {
+	margin-bottom: 15px;
+}
+
+.modal-footer {
+	display: flex;
+	justify-content: space-around;
+}
+
+.form-control {
+	width: 100%;
+	padding: 10px;
+	margin-top: 8px;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+}
+/* 버튼 스타일 */
+.btn {
+	padding: 10px 18px;
+	border-radius: 6px;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.btn-danger {
+	background: #e74c3c;
+	color: #fff;
+}
+
+.btn-danger:hover {
+	background: #c0392b;
+}
+
+.btn-secondary {
+	background: #ccc;
+	color: #000;
+}
+
+.btn-secondary:hover {
+	background: #aaa;
+}

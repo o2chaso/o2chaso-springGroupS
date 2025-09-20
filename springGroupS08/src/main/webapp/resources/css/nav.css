@@ -1,0 +1,134 @@
+@charset "UTF-8";
+/* Reset */
+* { box-sizing: border-box; margin:0; padding:0; }
+body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", sans-serif; }
+
+/* Nav Bar */
+.nav {
+  position: sticky; 
+  top:0; 
+  z-index:1000;
+  background:#fff; 
+  border-bottom:1px solid #eee;
+}
+
+/* 전체 래퍼 */
+.nav__wrap {
+  height:100px;               
+  max-width:1200px; margin:0 auto;
+  display:grid;
+  grid-template-columns: 1fr auto 1fr;  /* 왼쪽 / 가운데 / 오른쪽 */
+  align-items:center;
+  padding:0 20px;
+}
+
+/* 왼쪽: 로고 + 메뉴 */
+.nav__left {
+  display:flex;
+  align-items:center;
+  gap:24px;
+}
+.nav__brand {
+  text-decoration:none; 
+  font-weight:600;
+  color:#111;
+}
+.nav__links { display:flex; gap:24px; }
+.nav__link {
+  text-decoration:none; 
+  color:#111; 
+  font-weight:600; 
+  font-size:14px;
+  position:relative;
+}
+.nav__link::after {
+  content:""; position:absolute; left:0; right:0; bottom:-4px;
+  height:2px; background:#111;
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .2s ease;
+}
+.nav__link:hover::after { transform:scaleX(1); }
+
+/* 가운데: 검색창 */
+.nav__center {
+  display:flex;
+  justify-content:center;
+}
+
+.nav__search {
+	display: flex;
+	align-items: center;
+}
+
+.nav__btn {
+	background: #4e73df; /* 파란색 버튼 */
+	border: none;
+	color: white;
+	font-size: 14px;
+	width: 32px;
+	height: 32px;
+	margin-left: 5px;
+	border-radius: 50%;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.3s;
+}
+
+.nav__btn:hover {
+  background: #2e59d9;
+}
+
+
+.nav__input {
+  height:32px; min-width:200px;
+  border:1px solid #ddd; border-radius:16px;
+  padding:0 12px; outline:none;
+}
+.nav__input:focus { border-color:#aaa; }
+
+/* 오른쪽: 로그인/회원가입/드롭다운 */
+.nav__right {
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap: 12px;
+  margin-right: 10px; /* 오른쪽 끝 여백 */
+}
+.nav__auth, .nav__dropdown {
+  display: flex;
+  gap: 12px;
+}
+.nav__auth a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #111;
+}
+
+.role-badge { padding: 4px 8px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; color: #fff; }
+.role-badge.운영자 { background: #f00; }  /* 빨강 */
+.role-badge.운영진 { background: #3498db; }  /* 파랑 */
+.role-badge.매니저 { background: #9b59b6; }  /* 보라 */
+.role-badge.인사과 { background: #16a085; }  /* 청록 */
+.role-badge.급여담당자 { background: #f39c12; }/* 주황 */
+.role-badge.재무담당자 { background: #2980b9; }/* 짙은 파랑 */
+.role-badge.회계담당자 { background: #2c3e50; }/* 남색 */
+.role-badge.우수회원 { background: #2ecc71; }/* 초록 */
+.role-badge.정회원 { background: #2ecc71; }/* 초록 */
+.role-badge.일반회원 { background: #2ecc71; }/* 초록 */
+.role-badge.권한없음 { background: #7f8c8d; } /* 회색 */
+
+
+
+/* 반응형 */
+@media (max-width:768px){
+  .nav__wrap {
+    grid-template-columns: 1fr;   /* 한 줄로 */
+    grid-auto-rows: auto;
+  }
+  .nav__left, .nav__center, .nav__right {
+    justify-content:center;
+    margin: 8px 0;
+  }
+}

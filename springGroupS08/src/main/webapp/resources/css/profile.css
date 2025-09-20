@@ -1,0 +1,141 @@
+@charset "UTF-8";
+.profile-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.profile-card {
+  width: 450px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.profile-avatar {
+  position: relative;
+  background: linear-gradient(135deg, #4e73df, #1cc88a);
+  padding: 30px 0;
+}
+
+.profile-avatar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  background: #eee;
+  object-fit: cover;
+}
+
+.profile-info {
+  padding: 20px;
+}
+
+.profile-info .nickname {
+  margin: 10px 0 5px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.profile-info .email {
+  color: #666;
+  font-size: 0.95em;
+}
+
+.profile-info .address {
+  color: #888;
+  font-size: 0.9em;
+}
+
+.profile-details {
+  padding: 15px 25px;
+  text-align: left;
+}
+
+.profile-details table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.profile-details th {
+  text-align: right;
+  width: 30%;
+  padding: 8px;
+  color: #444;
+}
+
+.profile-details td {
+  padding: 8px;
+  color: #222;
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  border-top: 1px solid #eee;
+}
+
+.profile-actions .btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* 파랑 버튼 */
+.profile-actions .btn-primary {
+  background: #4e73df;
+  color: #fff;
+}
+.profile-actions .btn-primary:hover {
+  background: #2e59d9;
+}
+
+/* 회색 버튼 */
+.profile-actions .btn-secondary {
+  background: #ccc;
+  color: #000;
+}
+.profile-actions .btn-secondary:hover {
+  background: #aaa;
+}
+
+/* 빨강 버튼 */
+.profile-actions .btn-danger {
+  background: #e74c3c;
+  color: #fff;
+}
+.profile-actions .btn-danger:hover {
+  background: #c0392b;
+}
+
+.avatar-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.avatar-overlay .edit-icon {
+  font-size: 28px;
+  color: #fff;
+}
+
+.profile-avatar:hover .avatar-overlay {
+  opacity: 1;
+}

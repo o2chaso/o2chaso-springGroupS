@@ -1,0 +1,157 @@
+:root{
+  --bg:#0b1020;
+  --card:rgba(40,57,101,.9);
+  --accent:#1161ee;
+  --text:#e6e9f2;
+  --sub:#9aa3b2;
+  --radius:20px;
+  --shadow:0 12px 25px rgba(0,0,0,.35);
+  --nav-h:64px; /* 네비 높이(프로젝트에 맞게 조정) */
+}
+
+/* ====== reset & 배경 ====== */
+*,
+*::before,
+*::after{ box-sizing:border-box; }
+html, body{ height:100%; }
+body{
+  margin:0;
+  font:600 16px/1.5 'Open Sans', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(800px 400px at 20% 20%, #172041 0%, transparent 60%),
+    radial-gradient(800px 400px at 80% 80%, #1d2a57 0%, transparent 55%),
+    var(--bg);
+}
+
+/* ====== 네비 상단 고정 ====== */
+.nav-fixed{
+  position:fixed;
+  top:0; left:0; width:100%;
+  z-index:1000;
+  /* nav.jsp가 자체 배경이 없으면 아래 배경 사용 */
+  background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(1.2) blur(6px);
+  box-shadow:0 2px 12px rgba(0,0,0,.08);
+}
+
+/* ====== 페이지 레이아웃 ====== */
+/* 네비 높이만큼 띄우고, 중앙 정렬 */
+.page{
+  min-height:100vh;
+  padding-top:var(--nav-h);
+  display:grid;
+  place-items:center;
+  padding-left:16px; padding-right:16px;
+}
+
+/* ====== 로그인 카드 ====== */
+.login-wrap{
+  width:100%;
+  max-width:420px;
+  background:no-repeat center/cover;
+  box-shadow:var(--shadow);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+.login-html{
+  width:100%;
+  height:100%;
+  background:var(--card);
+  padding:60px 48px 36px;
+}
+
+.tab{
+  font-size:22px;
+  margin-bottom:28px;
+  display:inline-block;
+  color:#fff;
+  border-bottom:2px solid var(--accent);
+  padding-bottom:6px;
+  text-transform:uppercase;
+}
+
+/* ====== 폼 ====== */
+.login-form{ min-height:300px; }
+
+.group{ margin-bottom:18px; }
+.group.inline{ display:flex; align-items:center; gap:8px; }
+
+.label{
+  font-size:12px;
+  color:var(--sub);
+  display:block;
+  margin-bottom:8px;
+  letter-spacing:.4px;
+}
+
+.input{
+  width:100%;
+  border:none;
+  padding:14px 18px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  color:var(--text);
+  outline:none;
+  transition: box-shadow .2s, background .2s, transform .08s;
+}
+.input:focus{
+  box-shadow:0 0 0 3px rgba(17,97,238,.35);
+  background:rgba(255,255,255,.12);
+}
+
+/* 버튼 */
+.button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:999px;
+  background:linear-gradient(135deg, var(--accent), #0e49c8);
+  color:#fff;
+  font-weight:800;
+  cursor:pointer;
+  transition: transform .08s ease, box-shadow .18s ease;
+  box-shadow:0 10px 22px rgba(17,97,238,.28);
+}
+.button:hover{ box-shadow:0 12px 28px rgba(17,97,238,.36); }
+.button:active{ transform:translateY(1px); }
+
+/* 체크박스 커스텀 */
+.check{ display:none; }
+.check + label{
+  color:var(--sub);
+  font-size:13px;
+  cursor:pointer;
+  user-select:none;
+}
+.check + label .icon{
+  width:15px; height:15px; border-radius:3px;
+  display:inline-block; background:rgba(255,255,255,.15);
+  margin-right:6px; vertical-align:middle; position:relative;
+}
+.check + label .icon:before,
+.check + label .icon:after{
+  content:''; position:absolute; width:8px; height:2px; background:#fff;
+  transform:scale(0); transition:transform .2s ease;
+  top:6px;
+}
+.check + label .icon:before{ left:2px; }
+.check + label .icon:after{ left:5px; }
+.check:checked + label .icon{ background:var(--accent); }
+.check:checked + label .icon:before{ transform:scale(1) rotate(45deg); }
+.check:checked + label .icon:after{ transform:scale(1) rotate(-45deg); }
+
+/* 구분선 & 하단 링크 */
+.hr{
+  height:2px; margin:28px 0 16px;
+  background:rgba(255,255,255,.2); border:none;
+}
+.foot-lnk{ text-align:center; font-size:13px; }
+.foot-lnk a{ color:var(--accent); text-decoration:none; }
+.foot-lnk a:hover{ text-decoration:underline; }
+
+/* ====== 반응형 ====== */
+@media (max-width:480px){
+  :root{ --nav-h:56px; }
+  .login-html{ padding:44px 18px 28px; }
+}
